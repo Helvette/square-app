@@ -10,8 +10,8 @@ import './Articulos.css';
 
 
 class Articulos extends Component{
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
     products: data.catalog, // AQUÍ DEBERÍA CAMBIAR A LA DATA DE FIREBASE con props probablemente
     productsForShow: data.catalog // aquí empieza igual a products, pero cambiará si se hace una búsqueda
@@ -90,7 +90,7 @@ class Articulos extends Component{
             <img className="img-responsive" src={prod.imageURL}/>
             <h3>{prod.name}</h3>
             <h4>$ {prod.price}</h4>
-            <h4 id="price">Stock: 5</h4>
+            <h4 id="price">Stock: {prod.stock}</h4>
             <div id="eliminar"><span className="glyphicon glyphicon-remove" aria-hidden="true"><p>Eliminar</p></span></div>
             </div>;
           })

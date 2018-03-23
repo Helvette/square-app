@@ -22,7 +22,7 @@ class App extends Component {
     }
 
     this.app = firebase.initializeApp(DB_CONFIG); // inicializando firebase con la configuración guardada
-    this.db = this.app.database().ref().child('products'); //referencia a la data
+    this.db = this.app.database().ref().child(`products`); //referencia a la data
     this.addProduct = this.addProduct.bind(this); //para no perder el scope
     this.removeProduct = this.removeProduct.bind(this);
     this.handleAuth = this.handleAuth.bind(this);
